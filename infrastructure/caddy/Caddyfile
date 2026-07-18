@@ -1,0 +1,9 @@
+enactus.local {
+    tls internal
+
+    reverse_proxy server:3000
+
+    handle /socket.io/* {
+        reverse_proxy server:3000
+    }
+}
